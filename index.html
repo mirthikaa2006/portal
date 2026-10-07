@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>test selector</title>
+  <style>
+    :root {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: #f4f7fb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(125deg, #0b1220, #1a0a3c, #062a4a, #0d3b2e);
+      background-size: 320% 320%;
+      animation: bgShift 18s ease infinite;
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-a {
+      width: 420px; height: 420px; top: -80px; left: -60px;
+      background: #6d5cff;
+      animation: floatA 12s ease-in-out infinite;
+    }
+    .orb-b {
+      width: 360px; height: 360px; right: -80px; top: 20%;
+      background: #00c2ff;
+      animation: floatB 14s ease-in-out infinite;
+    }
+    .orb-c {
+      width: 300px; height: 300px; bottom: -90px; left: 35%;
+      background: #2ee59d;
+      animation: floatC 16s ease-in-out infinite;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 80px;
+      animation: riseIn 0.7s ease both;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      margin: 0 0 6px;
+      letter-spacing: 0.02em;
+      animation: titleGlow 3.2s ease-in-out infinite;
+    }
+    .sub { color: #c9d4e3; margin-bottom: 22px; }
+
+    .row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+
+    button {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font: inherit;
+      backdrop-filter: blur(8px);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+    button:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+    button.primary {
+      background: #2ee59d;
+      color: #062018;
+      border-color: #2ee59d;
+      font-weight: 600;
+    }
+    button.primary:hover { background: #54f0b4; }
+
+    select, input {
+      font: inherit;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(8, 16, 32, 0.55);
+      color: #fff;
+    }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 16px 0; }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      animation: popIn 0.45s ease both;
+    }
+    .card:nth-child(2) { animation-delay: 0.08s; }
+    .card:nth-child(3) { animation-delay: 0.16s; }
+    .card:nth-child(4) { animation-delay: 0.24s; }
+    .card b { display: block; font-size: 1.2rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(8, 16, 32, 0.55);
+      border-radius: 12px;
+      overflow: hidden;
+      animation: riseIn 0.5s ease both;
+    }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.92rem; vertical-align: top; }
+    th { background: rgba(46, 229, 157, 0.18); color: #e8fff6; }
+    tbody tr { animation: rowIn 0.35s ease both; }
+    tbody tr:nth-child(odd) { animation-delay: 0.04s; }
+    tbody tr:nth-child(even) { animation-delay: 0.1s; }
+    tbody tr:hover { background: rgba(255, 255, 255, 0.06); }
+
+    .must { color: #ff8b8b; font-weight: 600; }
+    .rec { color: #ffd36a; font-weight: 600; }
+    .skip { color: #6dffc2; font-weight: 600; }
+    .why { color: #c9d4e3; font-size: 0.85rem; }
+    #status { min-height: 1.4em; color: #c9d4e3; }
+
+    .howto {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 14px 18px 8px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+      animation: riseIn 0.85s ease both;
+    }
+    .howto ol { margin: 8px 0 12px; padding-left: 22px; }
+    .howto li { margin: 4px 0; }
+    .howto a { color: #7cf0c4; }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes floatA {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, 30px); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-30px, 50px); }
+    }
+    @keyframes floatC {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -25px); }
+    }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes rowIn {
+      from { opacity: 0; transform: translateX(-8px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes titleGlow {
+      0%, 100% { text-shadow: 0 0 0 rgba(46, 229, 157, 0); }
+      50% { text-shadow: 0 0 18px rgba(46, 229, 157, 0.55); }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+  <div class="wrap">
+    <h1>test selector</h1>
+    <p class="sub">Click a sample change. The table is the answer: which tests to run, which to skip, and why.</p>
+
+    <div class="howto">
+      <strong>What to click to get answers</strong>
+      <ol>
+        <li>Leave <b>Role</b> as <code>qa_operator</code>.</li>
+        <li>Click <b>1. Hindi copy change</b>.</li>
+        <li>Read the table — that is the answer:
+          <b>must_run</b> / <b>recommended</b> = run these tests;
+          <b>skip</b> = safe to skip;
+          <b>Why</b> = the reason.</li>
+        <li>Click <b>2. Auth session code</b> to see a wider blast radius (fewer skips).</li>
+        <li>Optional: set <b>Simulate missing data</b> to <code>coverage</code>, click the same button again — skips get stricter.</li>
+      </ol>
+      <p>Swagger JSON instead: open <a href="/docs">/docs</a> → <b>GET /v1/select/{change_id}</b> → <b>Try it out</b> → <code>chg_hi_benefits_copy</code> → <b>Execute</b> → scroll to <b>Response body</b>.</p>
+    </div>
+
+    <div class="row">
+      <label>Role
+        <select id="role">
+          <option value="qa_operator">qa_operator (can apply skips)</option>
+          <option value="org_admin">org_admin</option>
+          <option value="partner">partner (limited catalog)</option>
+          <option value="auditor">auditor (advisory only)</option>
+        </select>
+      </label>
+      <label>Simulate missing data
+        <select id="missing">
+          <option value="">none</option>
+          <option value="coverage">coverage</option>
+          <option value="dependencies">dependencies</option>
+          <option value="failure_history">failure history</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="row" id="changes">
+      <button class="primary" data-id="chg_hi_benefits_copy">1. Hindi copy change</button>
+      <button data-id="chg_auth_session">2. Auth session code</button>
+      <button data-id="chg_payments_gateway">3. Payments gateway</button>
+      <button data-id="chg_ta_and_te_content">4. Tamil + Telugu content</button>
+      <button data-id="chg_mixed_benefits_hi">5. Mixed code + Hindi</button>
+    </div>
+
+    <p id="status">Click a button above.</p>
+    <div class="stats" id="stats"></div>
+    <div id="table"></div>
+  </div>
+
+  <script>
+    function apiBase() {
+      const fromQuery = new URLSearchParams(location.search).get("api");
+      if (fromQuery) return fromQuery.replace(/\/$/, "");
+      if ((location.protocol === "http:" || location.protocol === "https:") && location.port === "8000") {
+        return "";
+      }
+      return "http://127.0.0.1:8000";
+    }
+
+    const headers = () => ({
+      "X-Actor-Id": "demo-click",
+      "X-Org-Id": "ministry_interior",
+      "X-Role": document.getElementById("role").value,
+      "X-Partner-Org-Id": "partner_nid",
+    });
+
+    async function run(changeId) {
+      const missing = document.getElementById("missing").value;
+      const qs = missing ? `?missing=${encodeURIComponent(missing)}` : "";
+      const url = `${apiBase()}/v1/select/${changeId}${qs}`;
+      document.getElementById("status").textContent = "Loading " + changeId + "…";
+      let res;
+      try {
+        res = await fetch(url, { headers: headers() });
+      } catch (err) {
+        document.getElementById("status").textContent =
+          "Cannot reach the API at " + (apiBase() || location.origin) +
+          ". Start it with: uvicorn api.main:app --reload --port 8000 — then open http://127.0.0.1:8000/ or keep this file open and retry.";
+        return;
+      }
+      const data = await res.json();
+      if (!res.ok) {
+        document.getElementById("status").textContent = JSON.stringify(data);
+        return;
+      }
+      document.getElementById("status").textContent =
+        data.change_id + " · " + data.change_kind +
+        (data.locales_touched.length ? " · locales " + data.locales_touched.join(", ") : "");
+      document.getElementById("stats").innerHTML = `
+        <div class="card"><span>To run</span><b>${data.tests_to_run}</b></div>
+        <div class="card"><span>Skipped</span><b>${data.tests_skipped}</b></div>
+        <div class="card"><span>Selected time</span><b>${data.suite_seconds_selected}s</b></div>
+        <div class="card"><span>Full suite</span><b>${data.suite_seconds_full}s</b></div>
+      `;
+      const rows = data.recommendations.map(r => `
+        <tr>
+          <td class="${r.decision === "skip" ? "skip" : r.decision === "must_run" ? "must" : "rec"}">${r.decision}</td>
+          <td>${r.name}</td>
+          <td>${r.impact_score}</td>
+          <td class="why">${(r.skip_rationale || r.reasons.join(" "))}</td>
+        </tr>`).join("");
+      document.getElementById("table").innerHTML = `
+        <table>
+          <thead><tr><th>Decision</th><th>Test</th><th>Score</th><th>Why</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    }
+
+    document.getElementById("changes").addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      if (id) run(id);
+    });
+  </script>
+</body>
+</html>

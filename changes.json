@@ -1,0 +1,234 @@
+[
+  {
+    "change_id": "chg_hi_benefits_copy",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "locales/hi/benefits.json",
+        "kind": "content",
+        "locale": "hi",
+        "lines_added": 40,
+        "lines_removed": 22
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T10:00:00+00:00",
+    "summary": "Update Hindi benefits copy for scholarship scheme rename",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_auth_session",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/auth/session.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 28,
+        "lines_removed": 9
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T11:00:00+00:00",
+    "summary": "Harden session expiry for citizen login",
+    "partner_visible": true
+  },
+  {
+    "change_id": "chg_payments_gateway",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/payments/gateway.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 33,
+        "lines_removed": 6
+      }
+    ],
+    "author": "s.khan",
+    "timestamp": "2026-09-01T12:00:00+00:00",
+    "summary": "Retry policy for UPI timeout in payment gateway",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_eligibility_rule",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/benefits/eligibility.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 18,
+        "lines_removed": 4
+      }
+    ],
+    "author": "m.iyer",
+    "timestamp": "2026-09-01T13:00:00+00:00",
+    "summary": "Adjust rural eligibility threshold in benefits engine",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_i18n_fallback",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/i18n/fallback.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 15,
+        "lines_removed": 2
+      },
+      {
+        "path": "src/i18n/formatter.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 8,
+        "lines_removed": 1
+      }
+    ],
+    "author": "m.iyer",
+    "timestamp": "2026-09-01T14:00:00+00:00",
+    "summary": "Fix missing-key fallback so Hindi UI does not render English stubs",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_ta_and_te_content",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "locales/ta/appointments.json",
+        "kind": "content",
+        "locale": "ta",
+        "lines_added": 20,
+        "lines_removed": 10
+      },
+      {
+        "path": "locales/te/appointments.json",
+        "kind": "content",
+        "locale": "te",
+        "lines_added": 19,
+        "lines_removed": 9
+      }
+    ],
+    "author": "m.iyer",
+    "timestamp": "2026-09-01T15:00:00+00:00",
+    "summary": "Tamil and Telugu appointment slot labels",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_schema_profile",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "schemas/citizen.sql",
+        "kind": "schema",
+        "locale": null,
+        "lines_added": 6,
+        "lines_removed": 0
+      },
+      {
+        "path": "src/citizen/profile.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 22,
+        "lines_removed": 3
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T16:00:00+00:00",
+    "summary": "Add optional caste_category column to citizen profile schema",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_search_typo",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/search/index.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 11,
+        "lines_removed": 4
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T17:00:00+00:00",
+    "summary": "Correct analyzer config for multilingual search index",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_config_timeout",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "config/app.yaml",
+        "kind": "config",
+        "locale": null,
+        "lines_added": 2,
+        "lines_removed": 2
+      }
+    ],
+    "author": "l.das",
+    "timestamp": "2026-09-01T18:00:00+00:00",
+    "summary": "Increase gateway timeout in app config",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_sms_template",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/notifications/sms.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 9,
+        "lines_removed": 2
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T19:00:00+00:00",
+    "summary": "OTP SMS template uses formatter for locale digits",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_bn_common",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "locales/bn/common.json",
+        "kind": "content",
+        "locale": "bn",
+        "lines_added": 7,
+        "lines_removed": 7
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T20:00:00+00:00",
+    "summary": "Bengali common dictionary punctuation fixes",
+    "partner_visible": false
+  },
+  {
+    "change_id": "chg_mixed_benefits_hi",
+    "org_id": "ministry_interior",
+    "files": [
+      {
+        "path": "src/benefits/eligibility.py",
+        "kind": "code",
+        "locale": null,
+        "lines_added": 10,
+        "lines_removed": 2
+      },
+      {
+        "path": "locales/hi/benefits.json",
+        "kind": "content",
+        "locale": "hi",
+        "lines_added": 16,
+        "lines_removed": 8
+      }
+    ],
+    "author": "a.rao",
+    "timestamp": "2026-09-01T21:00:00+00:00",
+    "summary": "Eligibility copy + rule change for Hindi-majority states",
+    "partner_visible": false
+  }
+]

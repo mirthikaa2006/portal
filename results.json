@@ -1,0 +1,2114 @@
+{
+  "targets": {
+    "baseline": "Run entire org suite (run-all)",
+    "pattern_baseline": "Keep tests whose names/tags match changed path tokens, plus smoke/security",
+    "suite_time_goal_pct_reduction": 35,
+    "coverage_goal": "Recall 1.0 on ground-truth affected tests (never skip a test that would catch the change)"
+  },
+  "averages": {
+    "run_all_seconds": 1095.0,
+    "pattern_seconds": 348.75,
+    "selector_seconds": 624.0,
+    "run_all_recall": 1.0,
+    "pattern_recall": 0.793,
+    "selector_recall": 1.0,
+    "selector_time_saved_pct": 43.014,
+    "pattern_time_saved_pct": 68.15
+  },
+  "changes": [
+    {
+      "change_id": "chg_hi_benefits_copy",
+      "summary": "Update Hindi benefits copy for scholarship scheme rename",
+      "files": [
+        "locales/hi/benefits.json"
+      ],
+      "kind": "content",
+      "locales": [
+        "hi"
+      ],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 42,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 18,
+        "suite_seconds": 596.0,
+        "time_saved_seconds": 499.0,
+        "time_saved_pct": 45.57,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 16,
+        "recall": 1.0
+      },
+      "selector": {
+        "tests_run": 12,
+        "suite_seconds": 373.0,
+        "time_saved_seconds": 722.0,
+        "time_saved_pct": 65.94,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 10,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced.",
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_profile",
+          "name": "test_citizen_profile",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_auth_session",
+      "summary": "Harden session expiry for citizen login",
+      "files": [
+        "src/auth/session.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 110.0,
+        "time_saved_seconds": 985.0,
+        "time_saved_pct": 89.95,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 1,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 29,
+        "suite_seconds": 906.0,
+        "time_saved_seconds": 189.0,
+        "time_saved_pct": 17.26,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 23,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_config",
+          "name": "test_config_app",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_formatter",
+          "name": "test_i18n_formatter",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_int_notify",
+          "name": "test_integration_notifications",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_payments_gateway",
+      "summary": "Retry policy for UPI timeout in payment gateway",
+      "files": [
+        "src/payments/gateway.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 4,
+        "affected_caught": 4,
+        "missed_affected": [],
+        "false_positives": 40,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 131.0,
+        "time_saved_seconds": 964.0,
+        "time_saved_pct": 88.04,
+        "affected": 4,
+        "affected_caught": 3,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 3,
+        "recall": 0.75
+      },
+      "selector": {
+        "tests_run": 21,
+        "suite_seconds": 637.0,
+        "time_saved_seconds": 458.0,
+        "time_saved_pct": 41.83,
+        "affected": 4,
+        "affected_caught": 4,
+        "missed_affected": [],
+        "false_positives": 17,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_eligibility_rule",
+      "summary": "Adjust rural eligibility threshold in benefits engine",
+      "files": [
+        "src/benefits/eligibility.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 8,
+        "affected_caught": 8,
+        "missed_affected": [],
+        "false_positives": 36,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 16,
+        "suite_seconds": 533.0,
+        "time_saved_seconds": 562.0,
+        "time_saved_pct": 51.32,
+        "affected": 8,
+        "affected_caught": 8,
+        "missed_affected": [],
+        "false_positives": 8,
+        "recall": 1.0
+      },
+      "selector": {
+        "tests_run": 18,
+        "suite_seconds": 599.0,
+        "time_saved_seconds": 496.0,
+        "time_saved_pct": 45.3,
+        "affected": 8,
+        "affected_caught": 8,
+        "missed_affected": [],
+        "false_positives": 10,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_profile",
+          "name": "test_citizen_profile",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_i18n_fallback",
+      "summary": "Fix missing-key fallback so Hindi UI does not render English stubs",
+      "files": [
+        "src/i18n/fallback.py",
+        "src/i18n/formatter.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 10,
+        "affected_caught": 10,
+        "missed_affected": [],
+        "false_positives": 34,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 4,
+        "suite_seconds": 80.0,
+        "time_saved_seconds": 1015.0,
+        "time_saved_pct": 92.69,
+        "affected": 10,
+        "affected_caught": 2,
+        "missed_affected": [
+          "t_a11y_home",
+          "t_int_benefits_flow",
+          "t_int_notify",
+          "t_locale_bn_common",
+          "t_locale_en_common",
+          "t_locale_hi_common",
+          "t_locale_ta_common",
+          "t_locale_te_common"
+        ],
+        "false_positives": 2,
+        "recall": 0.2
+      },
+      "selector": {
+        "tests_run": 33,
+        "suite_seconds": 980.0,
+        "time_saved_seconds": 115.0,
+        "time_saved_pct": 10.5,
+        "affected": 10,
+        "affected_caught": 10,
+        "missed_affected": [],
+        "false_positives": 23,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_profile",
+          "name": "test_citizen_profile",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_config",
+          "name": "test_config_app",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_ta_and_te_content",
+      "summary": "Tamil and Telugu appointment slot labels",
+      "files": [
+        "locales/ta/appointments.json",
+        "locales/te/appointments.json"
+      ],
+      "kind": "content",
+      "locales": [
+        "ta",
+        "te"
+      ],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 42,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 42,
+        "recall": 1.0
+      },
+      "selector": {
+        "tests_run": 12,
+        "suite_seconds": 387.0,
+        "time_saved_seconds": 708.0,
+        "time_saved_pct": 64.66,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 10,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced.",
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_application",
+          "name": "test_benefits_application",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_schema_profile",
+      "summary": "Add optional caste_category column to citizen profile schema",
+      "files": [
+        "schemas/citizen.sql",
+        "src/citizen/profile.py"
+      ],
+      "kind": "mixed",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 7,
+        "suite_seconds": 166.0,
+        "time_saved_seconds": 929.0,
+        "time_saved_pct": 84.84,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_unit_upload"
+        ],
+        "false_positives": 2,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 27,
+        "suite_seconds": 889.0,
+        "time_saved_seconds": 206.0,
+        "time_saved_pct": 18.81,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 21,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_config",
+          "name": "test_config_app",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_search_typo",
+      "summary": "Correct analyzer config for multilingual search index",
+      "files": [
+        "src/search/index.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 42,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 4,
+        "suite_seconds": 83.0,
+        "time_saved_seconds": 1012.0,
+        "time_saved_pct": 92.42,
+        "affected": 2,
+        "affected_caught": 1,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 3,
+        "recall": 0.5
+      },
+      "selector": {
+        "tests_run": 18,
+        "suite_seconds": 598.0,
+        "time_saved_seconds": 497.0,
+        "time_saved_pct": 45.39,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 16,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_config_timeout",
+      "summary": "Increase gateway timeout in app config",
+      "files": [
+        "config/app.yaml"
+      ],
+      "kind": "config",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 5,
+        "affected_caught": 5,
+        "missed_affected": [],
+        "false_positives": 39,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 13,
+        "suite_seconds": 411.0,
+        "time_saved_seconds": 684.0,
+        "time_saved_pct": 62.47,
+        "affected": 5,
+        "affected_caught": 2,
+        "missed_affected": [
+          "t_int_payments",
+          "t_unit_gateway",
+          "t_unit_session"
+        ],
+        "false_positives": 11,
+        "recall": 0.4
+      },
+      "selector": {
+        "tests_run": 34,
+        "suite_seconds": 960.0,
+        "time_saved_seconds": 135.0,
+        "time_saved_pct": 12.33,
+        "affected": 5,
+        "affected_caught": 5,
+        "missed_affected": [],
+        "false_positives": 29,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_formatter",
+          "name": "test_i18n_formatter",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_locale_bn_common",
+          "name": "test_locale_bn_common_copy",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_locale_en_common",
+          "name": "test_locale_en_common_copy",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_sms_template",
+      "summary": "OTP SMS template uses formatter for locale digits",
+      "files": [
+        "src/notifications/sms.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 42,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 108.0,
+        "time_saved_seconds": 987.0,
+        "time_saved_pct": 90.14,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 4,
+        "recall": 1.0
+      },
+      "selector": {
+        "tests_run": 7,
+        "suite_seconds": 191.0,
+        "time_saved_seconds": 904.0,
+        "time_saved_pct": 82.56,
+        "affected": 2,
+        "affected_caught": 2,
+        "missed_affected": [],
+        "false_positives": 5,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_application",
+          "name": "test_benefits_application",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_bn_common",
+      "summary": "Bengali common dictionary punctuation fixes",
+      "files": [
+        "locales/bn/common.json"
+      ],
+      "kind": "content",
+      "locales": [
+        "bn"
+      ],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 1,
+        "affected_caught": 1,
+        "missed_affected": [],
+        "false_positives": 43,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 11,
+        "suite_seconds": 276.0,
+        "time_saved_seconds": 819.0,
+        "time_saved_pct": 74.79,
+        "affected": 1,
+        "affected_caught": 1,
+        "missed_affected": [],
+        "false_positives": 10,
+        "recall": 1.0
+      },
+      "selector": {
+        "tests_run": 9,
+        "suite_seconds": 306.0,
+        "time_saved_seconds": 789.0,
+        "time_saved_pct": 72.05,
+        "affected": 1,
+        "affected_caught": 1,
+        "missed_affected": [],
+        "false_positives": 8,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced.",
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_application",
+          "name": "test_benefits_application",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_mixed_benefits_hi",
+      "summary": "Eligibility copy + rule change for Hindi-majority states",
+      "files": [
+        "src/benefits/eligibility.py",
+        "locales/hi/benefits.json"
+      ],
+      "kind": "mixed",
+      "locales": [
+        "hi"
+      ],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 9,
+        "affected_caught": 9,
+        "missed_affected": [],
+        "false_positives": 35,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 18,
+        "suite_seconds": 596.0,
+        "time_saved_seconds": 499.0,
+        "time_saved_pct": 45.57,
+        "affected": 9,
+        "affected_caught": 9,
+        "missed_affected": [],
+        "false_positives": 9,
+        "recall": 1.0
+      },
+      "selector": {
+        "tests_run": 20,
+        "suite_seconds": 662.0,
+        "time_saved_seconds": 433.0,
+        "time_saved_pct": 39.54,
+        "affected": 9,
+        "affected_caught": 9,
+        "missed_affected": [],
+        "false_positives": 11,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced.",
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_otp",
+          "name": "test_auth_otp",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_session",
+          "name": "test_auth_session",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        },
+        {
+          "test_id": "t_unit_profile",
+          "name": "test_citizen_profile",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "Shared (non-locale) test; content changes do not auto-skip it."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history",
+            "locale_rules"
+          ]
+        }
+      ]
+    }
+  ],
+  "error_analysis": {
+    "selector_miss_count": 0,
+    "misses": [],
+    "pattern_misses": [
+      {
+        "change_id": "chg_auth_session",
+        "missed": [
+          "t_int_benefits_flow"
+        ]
+      },
+      {
+        "change_id": "chg_payments_gateway",
+        "missed": [
+          "t_int_benefits_flow"
+        ]
+      },
+      {
+        "change_id": "chg_i18n_fallback",
+        "missed": [
+          "t_a11y_home",
+          "t_int_benefits_flow",
+          "t_int_notify",
+          "t_locale_bn_common",
+          "t_locale_en_common",
+          "t_locale_hi_common",
+          "t_locale_ta_common",
+          "t_locale_te_common"
+        ]
+      },
+      {
+        "change_id": "chg_schema_profile",
+        "missed": [
+          "t_unit_upload"
+        ]
+      },
+      {
+        "change_id": "chg_search_typo",
+        "missed": [
+          "t_int_benefits_flow"
+        ]
+      },
+      {
+        "change_id": "chg_config_timeout",
+        "missed": [
+          "t_int_payments",
+          "t_unit_gateway",
+          "t_unit_session"
+        ]
+      }
+    ]
+  },
+  "degradation": [
+    {
+      "change_id": "chg_auth_session",
+      "summary": "Harden session expiry for citizen login",
+      "files": [
+        "src/auth/session.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [],
+      "skip_threshold": 0.18,
+      "source_completeness": 1.0,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 110.0,
+        "time_saved_seconds": 985.0,
+        "time_saved_pct": 89.95,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 1,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 29,
+        "suite_seconds": 906.0,
+        "time_saved_seconds": 189.0,
+        "time_saved_pct": 17.26,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 23,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_config",
+          "name": "test_config_app",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_formatter",
+          "name": "test_i18n_formatter",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_int_notify",
+          "name": "test_integration_notifications",
+          "rationale": "Impact score 0.00 is below skip threshold 0.18. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_auth_session",
+      "summary": "Harden session expiry for citizen login",
+      "files": [
+        "src/auth/session.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [
+        "coverage"
+      ],
+      "skip_threshold": 0.3,
+      "source_completeness": 0.75,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 110.0,
+        "time_saved_seconds": 985.0,
+        "time_saved_pct": 89.95,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 1,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 31,
+        "suite_seconds": 939.0,
+        "time_saved_seconds": 156.0,
+        "time_saved_pct": 14.25,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 25,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.30. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_config",
+          "name": "test_config_app",
+          "rationale": "Impact score 0.00 is below skip threshold 0.30. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_formatter",
+          "name": "test_i18n_formatter",
+          "rationale": "Impact score 0.00 is below skip threshold 0.30. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_locale_bn_common",
+          "name": "test_locale_bn_common_copy",
+          "rationale": "Impact score 0.00 is below skip threshold 0.30. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "dependencies",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_locale_en_common",
+          "name": "test_locale_en_common_copy",
+          "rationale": "Impact score 0.00 is below skip threshold 0.30. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "dependencies",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_auth_session",
+      "summary": "Harden session expiry for citizen login",
+      "files": [
+        "src/auth/session.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [
+        "dependencies"
+      ],
+      "skip_threshold": 0.28,
+      "source_completeness": 0.75,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 110.0,
+        "time_saved_seconds": 985.0,
+        "time_saved_pct": 89.95,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 1,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 20,
+        "suite_seconds": 783.0,
+        "time_saved_seconds": 312.0,
+        "time_saved_pct": 28.49,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 14,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.28. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.28. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_application",
+          "name": "test_benefits_application",
+          "rationale": "Impact score 0.00 is below skip threshold 0.28. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.28. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_profile",
+          "name": "test_citizen_profile",
+          "rationale": "Impact score 0.00 is below skip threshold 0.28. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "failure_history"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_auth_session",
+      "summary": "Harden session expiry for citizen login",
+      "files": [
+        "src/auth/session.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [
+        "failure_history"
+      ],
+      "skip_threshold": 0.22,
+      "source_completeness": 0.85,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 110.0,
+        "time_saved_seconds": 985.0,
+        "time_saved_pct": 89.95,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 1,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 29,
+        "suite_seconds": 906.0,
+        "time_saved_seconds": 189.0,
+        "time_saved_pct": 17.26,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 23,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.22. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "This test's coverage row is stale; overlap still counted, confidence reduced."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.22. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies"
+          ]
+        },
+        {
+          "test_id": "t_unit_config",
+          "name": "test_config_app",
+          "rationale": "Impact score 0.00 is below skip threshold 0.22. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies"
+          ]
+        },
+        {
+          "test_id": "t_unit_formatter",
+          "name": "test_i18n_formatter",
+          "rationale": "Impact score 0.00 is below skip threshold 0.22. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies"
+          ]
+        },
+        {
+          "test_id": "t_int_notify",
+          "name": "test_integration_notifications",
+          "rationale": "Impact score 0.00 is below skip threshold 0.22. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "coverage",
+            "dependencies"
+          ]
+        }
+      ]
+    },
+    {
+      "change_id": "chg_auth_session",
+      "summary": "Harden session expiry for citizen login",
+      "files": [
+        "src/auth/session.py"
+      ],
+      "kind": "code",
+      "locales": [],
+      "missing": [
+        "coverage",
+        "dependencies"
+      ],
+      "skip_threshold": 0.4,
+      "source_completeness": 0.5,
+      "run_all": {
+        "tests_run": 44,
+        "suite_seconds": 1095.0,
+        "time_saved_seconds": 0.0,
+        "time_saved_pct": 0.0,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 38,
+        "recall": 1.0
+      },
+      "pattern": {
+        "tests_run": 6,
+        "suite_seconds": 110.0,
+        "time_saved_seconds": 985.0,
+        "time_saved_pct": 89.95,
+        "affected": 6,
+        "affected_caught": 5,
+        "missed_affected": [
+          "t_int_benefits_flow"
+        ],
+        "false_positives": 1,
+        "recall": 0.833
+      },
+      "selector": {
+        "tests_run": 20,
+        "suite_seconds": 783.0,
+        "time_saved_seconds": 312.0,
+        "time_saved_pct": 28.49,
+        "affected": 6,
+        "affected_caught": 6,
+        "missed_affected": [],
+        "false_positives": 14,
+        "recall": 1.0
+      },
+      "skipped_examples": [
+        {
+          "test_id": "t_a11y_home",
+          "name": "test_accessibility_home",
+          "rationale": "Impact score 0.00 is below skip threshold 0.40. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_slots",
+          "name": "test_appointments_slots",
+          "rationale": "Impact score 0.00 is below skip threshold 0.40. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_application",
+          "name": "test_benefits_application",
+          "rationale": "Impact score 0.00 is below skip threshold 0.40. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_eligibility",
+          "name": "test_benefits_eligibility",
+          "rationale": "Impact score 0.00 is below skip threshold 0.40. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "failure_history"
+          ]
+        },
+        {
+          "test_id": "t_unit_profile",
+          "name": "test_citizen_profile",
+          "rationale": "Impact score 0.00 is below skip threshold 0.40. No coverage/dependency/locale/failure evidence ties this test to the change.",
+          "reasons": [
+            "No blast-radius evidence from available data sources."
+          ],
+          "sources": [
+            "code_changes",
+            "failure_history"
+          ]
+        }
+      ]
+    }
+  ]
+}

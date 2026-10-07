@@ -1,0 +1,83 @@
+[
+  {
+    "source": "src/auth/session.py",
+    "dependents": [
+      "src/auth/otp.py",
+      "src/citizen/profile.py",
+      "src/benefits/application.py"
+    ]
+  },
+  {
+    "source": "src/auth/otp.py",
+    "dependents": [
+      "src/citizen/profile.py"
+    ]
+  },
+  {
+    "source": "src/citizen/profile.py",
+    "dependents": [
+      "src/benefits/application.py",
+      "src/documents/upload.py",
+      "src/appointments/slots.py"
+    ]
+  },
+  {
+    "source": "src/benefits/eligibility.py",
+    "dependents": [
+      "src/benefits/application.py"
+    ]
+  },
+  {
+    "source": "src/payments/gateway.py",
+    "dependents": [
+      "src/payments/receipt.py",
+      "src/benefits/application.py"
+    ]
+  },
+  {
+    "source": "src/payments/receipt.py",
+    "dependents": [
+      "src/notifications/email.py"
+    ]
+  },
+  {
+    "source": "src/i18n/formatter.py",
+    "dependents": [
+      "src/benefits/application.py",
+      "src/notifications/sms.py",
+      "src/notifications/email.py",
+      "src/appointments/slots.py"
+    ]
+  },
+  {
+    "source": "src/i18n/fallback.py",
+    "dependents": [
+      "src/i18n/formatter.py"
+    ]
+  },
+  {
+    "source": "src/search/index.py",
+    "dependents": [
+      "src/benefits/application.py"
+    ]
+  },
+  {
+    "source": "src/documents/upload.py",
+    "dependents": [
+      "src/benefits/application.py"
+    ]
+  },
+  {
+    "source": "config/app.yaml",
+    "dependents": [
+      "src/auth/session.py",
+      "src/payments/gateway.py"
+    ]
+  },
+  {
+    "source": "schemas/citizen.sql",
+    "dependents": [
+      "src/citizen/profile.py"
+    ]
+  }
+]

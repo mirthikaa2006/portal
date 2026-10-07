@@ -1,0 +1,766 @@
+[
+  {
+    "test_id": "t_unit_session",
+    "name": "test_auth_session",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 8,
+    "tags": [
+      "auth",
+      "session"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_otp",
+    "name": "test_auth_otp",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 9,
+    "tags": [
+      "auth",
+      "otp"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_profile",
+    "name": "test_citizen_profile",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 10,
+    "tags": [
+      "citizen",
+      "profile"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_eligibility",
+    "name": "test_benefits_eligibility",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 11,
+    "tags": [
+      "benefits",
+      "eligibility"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_application",
+    "name": "test_benefits_application",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 14,
+    "tags": [
+      "benefits",
+      "application"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_gateway",
+    "name": "test_payments_gateway",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 12,
+    "tags": [
+      "payments",
+      "gateway",
+      "payment"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_receipt",
+    "name": "test_payments_receipt",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 8,
+    "tags": [
+      "payments",
+      "receipt",
+      "payment"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_upload",
+    "name": "test_documents_upload",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 9,
+    "tags": [
+      "documents",
+      "upload"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_sms",
+    "name": "test_notifications_sms",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 6,
+    "tags": [
+      "notifications",
+      "sms"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_email",
+    "name": "test_notifications_email",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 7,
+    "tags": [
+      "notifications",
+      "email"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_search",
+    "name": "test_search_index",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 10,
+    "tags": [
+      "search",
+      "index"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_slots",
+    "name": "test_appointments_slots",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 9,
+    "tags": [
+      "appointments",
+      "slots"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_formatter",
+    "name": "test_i18n_formatter",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 7,
+    "tags": [
+      "i18n",
+      "formatter"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_fallback",
+    "name": "test_i18n_fallback",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 8,
+    "tags": [
+      "i18n",
+      "fallback",
+      "shared-smoke"
+    ],
+    "locales": [],
+    "critical": true,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_config",
+    "name": "test_config_app",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 5,
+    "tags": [
+      "config"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_unit_schema",
+    "name": "test_schema_citizen",
+    "org_id": "ministry_interior",
+    "layer": "unit",
+    "estimated_seconds": 13,
+    "tags": [
+      "schema",
+      "citizen"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "platform"
+  },
+  {
+    "test_id": "t_int_benefits_flow",
+    "name": "test_integration_benefits_application",
+    "org_id": "ministry_interior",
+    "layer": "integration",
+    "estimated_seconds": 42,
+    "tags": [
+      "benefits",
+      "application",
+      "profile"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "benefits"
+  },
+  {
+    "test_id": "t_int_payments",
+    "name": "test_integration_payments",
+    "org_id": "ministry_interior",
+    "layer": "integration",
+    "estimated_seconds": 38,
+    "tags": [
+      "payments",
+      "payment",
+      "gateway"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": false,
+    "owner_team": "payments"
+  },
+  {
+    "test_id": "t_int_notify",
+    "name": "test_integration_notifications",
+    "org_id": "ministry_interior",
+    "layer": "integration",
+    "estimated_seconds": 22,
+    "tags": [
+      "notifications",
+      "sms",
+      "email"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "notify"
+  },
+  {
+    "test_id": "t_int_appointments",
+    "name": "test_integration_appointments",
+    "org_id": "ministry_interior",
+    "layer": "integration",
+    "estimated_seconds": 28,
+    "tags": [
+      "appointments",
+      "slots",
+      "profile"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "appointments"
+  },
+  {
+    "test_id": "t_sec_auth",
+    "name": "test_security_auth_session",
+    "org_id": "ministry_interior",
+    "layer": "security",
+    "estimated_seconds": 35,
+    "tags": [
+      "security",
+      "auth",
+      "session"
+    ],
+    "locales": [],
+    "critical": true,
+    "partner_visible": false,
+    "owner_team": "security"
+  },
+  {
+    "test_id": "t_smoke_portal",
+    "name": "test_smoke_citizen_portal",
+    "org_id": "ministry_interior",
+    "layer": "smoke",
+    "estimated_seconds": 30,
+    "tags": [
+      "smoke",
+      "shared-smoke"
+    ],
+    "locales": [
+      "en"
+    ],
+    "critical": true,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_a11y_home",
+    "name": "test_accessibility_home",
+    "org_id": "ministry_interior",
+    "layer": "accessibility",
+    "estimated_seconds": 26,
+    "tags": [
+      "accessibility",
+      "home"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "a11y"
+  },
+  {
+    "test_id": "t_locale_en_common",
+    "name": "test_locale_en_common_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 15,
+    "tags": [
+      "locale",
+      "en",
+      "common"
+    ],
+    "locales": [
+      "en"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_locale_en_benefits",
+    "name": "test_locale_en_benefits_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 18,
+    "tags": [
+      "locale",
+      "en",
+      "benefits"
+    ],
+    "locales": [
+      "en"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_e2e_benefits_en",
+    "name": "test_e2e_benefits_en",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 55,
+    "tags": [
+      "e2e",
+      "benefits",
+      "en"
+    ],
+    "locales": [
+      "en"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_e2e_appointments_en",
+    "name": "test_e2e_appointments_en",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 48,
+    "tags": [
+      "e2e",
+      "appointments",
+      "en"
+    ],
+    "locales": [
+      "en"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_locale_hi_common",
+    "name": "test_locale_hi_common_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 15,
+    "tags": [
+      "locale",
+      "hi",
+      "common"
+    ],
+    "locales": [
+      "hi"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_locale_hi_benefits",
+    "name": "test_locale_hi_benefits_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 18,
+    "tags": [
+      "locale",
+      "hi",
+      "benefits"
+    ],
+    "locales": [
+      "hi"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_e2e_benefits_hi",
+    "name": "test_e2e_benefits_hi",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 62,
+    "tags": [
+      "e2e",
+      "benefits",
+      "hi"
+    ],
+    "locales": [
+      "hi"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_e2e_appointments_hi",
+    "name": "test_e2e_appointments_hi",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 48,
+    "tags": [
+      "e2e",
+      "appointments",
+      "hi"
+    ],
+    "locales": [
+      "hi"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_locale_ta_common",
+    "name": "test_locale_ta_common_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 15,
+    "tags": [
+      "locale",
+      "ta",
+      "common"
+    ],
+    "locales": [
+      "ta"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_locale_ta_benefits",
+    "name": "test_locale_ta_benefits_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 18,
+    "tags": [
+      "locale",
+      "ta",
+      "benefits"
+    ],
+    "locales": [
+      "ta"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_e2e_benefits_ta",
+    "name": "test_e2e_benefits_ta",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 62,
+    "tags": [
+      "e2e",
+      "benefits",
+      "ta"
+    ],
+    "locales": [
+      "ta"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_e2e_appointments_ta",
+    "name": "test_e2e_appointments_ta",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 48,
+    "tags": [
+      "e2e",
+      "appointments",
+      "ta"
+    ],
+    "locales": [
+      "ta"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_locale_te_common",
+    "name": "test_locale_te_common_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 15,
+    "tags": [
+      "locale",
+      "te",
+      "common"
+    ],
+    "locales": [
+      "te"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_locale_te_benefits",
+    "name": "test_locale_te_benefits_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 18,
+    "tags": [
+      "locale",
+      "te",
+      "benefits"
+    ],
+    "locales": [
+      "te"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_e2e_benefits_te",
+    "name": "test_e2e_benefits_te",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 62,
+    "tags": [
+      "e2e",
+      "benefits",
+      "te"
+    ],
+    "locales": [
+      "te"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_e2e_appointments_te",
+    "name": "test_e2e_appointments_te",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 48,
+    "tags": [
+      "e2e",
+      "appointments",
+      "te"
+    ],
+    "locales": [
+      "te"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_locale_bn_common",
+    "name": "test_locale_bn_common_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 15,
+    "tags": [
+      "locale",
+      "bn",
+      "common"
+    ],
+    "locales": [
+      "bn"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_locale_bn_benefits",
+    "name": "test_locale_bn_benefits_copy",
+    "org_id": "ministry_interior",
+    "layer": "locale",
+    "estimated_seconds": 18,
+    "tags": [
+      "locale",
+      "bn",
+      "benefits"
+    ],
+    "locales": [
+      "bn"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "i18n"
+  },
+  {
+    "test_id": "t_e2e_benefits_bn",
+    "name": "test_e2e_benefits_bn",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 62,
+    "tags": [
+      "e2e",
+      "benefits",
+      "bn"
+    ],
+    "locales": [
+      "bn"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_e2e_appointments_bn",
+    "name": "test_e2e_appointments_bn",
+    "org_id": "ministry_interior",
+    "layer": "e2e",
+    "estimated_seconds": 48,
+    "tags": [
+      "e2e",
+      "appointments",
+      "bn"
+    ],
+    "locales": [
+      "bn"
+    ],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "qa"
+  },
+  {
+    "test_id": "t_partner_nid_hook",
+    "name": "test_partner_nid_identity_hook",
+    "org_id": "ministry_interior",
+    "layer": "integration",
+    "estimated_seconds": 20,
+    "tags": [
+      "partner",
+      "nid",
+      "auth"
+    ],
+    "locales": [],
+    "critical": false,
+    "partner_visible": true,
+    "owner_team": "partners"
+  },
+  {
+    "test_id": "t_nid_internal",
+    "name": "test_nid_internal_sync",
+    "org_id": "partner_nid",
+    "layer": "integration",
+    "estimated_seconds": 25,
+    "tags": [
+      "partner",
+      "internal"
+    ],
+    "locales": [],
+    "critical": true,
+    "partner_visible": true,
+    "owner_team": "nid"
+  },
+  {
+    "test_id": "t_karnataka_scheme",
+    "name": "test_state_karnataka_scheme_overlay",
+    "org_id": "state_karnataka",
+    "layer": "e2e",
+    "estimated_seconds": 40,
+    "tags": [
+      "state",
+      "benefits",
+      "kn"
+    ],
+    "locales": [
+      "en",
+      "ta"
+    ],
+    "critical": false,
+    "partner_visible": false,
+    "owner_team": "state"
+  }
+]

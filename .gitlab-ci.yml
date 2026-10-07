@@ -1,0 +1,77 @@
+# GitLab CI/CD Pipeline: Test Impact Selection & Telemetry Streaming
+
+stages:
+  - select_and_test
+
+variables:
+  MITHUNA_API_URL: "http://test-selector.internal:8000"
+  ORG_ID: "ministry_interior"
+  ACTOR_ID: "gitlab-ci-bot"
+
+run_impact_selected_tests:
+  stage: select_and_test
+  image: python:3.11-slim
+  before_script:
+    - apt-get update && apt-get install -y git curl jq
+    - python -m pip install --upgrade pip
+    - pip install -r requirements.txt
+  script:
+    - git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME || true
+    - BASE_SHA="${CI_MERGE_REQUEST_DIFF_BASE_SHA:-HEAD~1}"
+    
+    # 1. Query Mithuna selector with git diff
+    - |
+      PAYLOAD=$(jq -n \
+        --arg org "$ORG_ID" \
+        --arg summary "$CI_COMMIT_TITLE" \
+        --argjson files "$(git diff --name-only $BASE_SHA HEAD | awk 'NF {print "{\"path\":\"" $0 "\",\"kind\":\"code\"}"}' | jq -s .)" \
+        '{org_id: $org, summary: $summary, files: $files}')
+
+      RESPONSE=$(curl -s -X POST "$MITHUNA_API_URL/v1/select" \
+        -H "Content-Type: application/json" \
+        -H "X-Actor-Id: $ACTOR_ID" \
+        -H "X-Org-Id: $ORG_ID" \
+        -H "X-Role: qa_operator" \
+        -d "$PAYLOAD" || echo '{"policy":{"can_execute_skips":"no"}}')
+
+      TESTS_TO_RUN=$(echo "$RESPONSE" | jq -r '.recommendations[]? | select(.decision != "skip") | .test_id' | tr '\n' ' ')
+      echo "TESTS_TO_RUN=$TESTS_TO_RUN" > selected_tests.env
+
+    # 2. Run selected tests
+    - |
+      source selected_tests.env
+      START_TIME=$(date +%s)
+      TEST_EXIT=0
+      if [ -z "$TESTS_TO_RUN" ]; then
+        echo "All tests safely skipped by impact selector."
+      else
+        echo "Running tests: $TESTS_TO_RUN"
+        python -m pytest -q || TEST_EXIT=$?
+      fi
+      END_TIME=$(date +%s)
+      echo "TEST_EXIT=$TEST_EXIT" >> selected_tests.env
+      echo "DURATION=$((END_TIME - START_TIME))" >> selected_tests.env
+      exit $TEST_EXIT
+
+  after_script:
+    # 3. Stream Telemetry back to POST /v1/feedback (always executes even on test failure)
+    - |
+      if [ -f selected_tests.env ]; then
+        source selected_tests.env
+        PASSED="true"
+        [ "${TEST_EXIT:-0}" != "0" ] && PASSED="false"
+
+        for TEST_ID in ${TESTS_TO_RUN:-t_smoke_portal}; do
+          python scripts/stream_telemetry.py \
+            --endpoint "$MITHUNA_API_URL/v1/feedback" \
+            --change-id "$CI_COMMIT_SHA" \
+            --test-id "$TEST_ID" \
+            --passed "$PASSED" \
+            --duration "${DURATION:-0}" \
+            --actor "$ACTOR_ID" \
+            --org "$ORG_ID"
+        done
+
+        # Flush any offline spool file
+        python scripts/stream_telemetry.py --flush --endpoint "$MITHUNA_API_URL/v1/feedback"
+      fi

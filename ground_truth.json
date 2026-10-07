@@ -1,0 +1,83 @@
+{
+  "chg_hi_benefits_copy": [
+    "t_e2e_benefits_hi",
+    "t_locale_hi_benefits"
+  ],
+  "chg_auth_session": [
+    "t_int_benefits_flow",
+    "t_partner_nid_hook",
+    "t_sec_auth",
+    "t_smoke_portal",
+    "t_unit_otp",
+    "t_unit_session"
+  ],
+  "chg_payments_gateway": [
+    "t_int_benefits_flow",
+    "t_int_payments",
+    "t_unit_gateway",
+    "t_unit_receipt"
+  ],
+  "chg_eligibility_rule": [
+    "t_e2e_benefits_bn",
+    "t_e2e_benefits_en",
+    "t_e2e_benefits_hi",
+    "t_e2e_benefits_ta",
+    "t_e2e_benefits_te",
+    "t_int_benefits_flow",
+    "t_unit_application",
+    "t_unit_eligibility"
+  ],
+  "chg_i18n_fallback": [
+    "t_a11y_home",
+    "t_int_benefits_flow",
+    "t_int_notify",
+    "t_locale_bn_common",
+    "t_locale_en_common",
+    "t_locale_hi_common",
+    "t_locale_ta_common",
+    "t_locale_te_common",
+    "t_unit_fallback",
+    "t_unit_formatter"
+  ],
+  "chg_ta_and_te_content": [
+    "t_e2e_appointments_ta",
+    "t_e2e_appointments_te"
+  ],
+  "chg_schema_profile": [
+    "t_unit_schema",
+    "t_unit_profile",
+    "t_unit_upload",
+    "t_int_benefits_flow",
+    "t_int_appointments",
+    "t_smoke_portal"
+  ],
+  "chg_search_typo": [
+    "t_int_benefits_flow",
+    "t_unit_search"
+  ],
+  "chg_config_timeout": [
+    "t_int_payments",
+    "t_sec_auth",
+    "t_unit_config",
+    "t_unit_gateway",
+    "t_unit_session"
+  ],
+  "chg_sms_template": [
+    "t_int_notify",
+    "t_unit_sms"
+  ],
+  "chg_bn_common": [
+    "t_locale_bn_common"
+  ],
+  "chg_mixed_benefits_hi": [
+    "t_e2e_benefits_bn",
+    "t_e2e_benefits_en",
+    "t_e2e_benefits_hi",
+    "t_e2e_benefits_ta",
+    "t_e2e_benefits_te",
+    "t_int_benefits_flow",
+    "t_locale_hi_benefits",
+    "t_unit_application",
+    "t_unit_eligibility"
+  ]
+}

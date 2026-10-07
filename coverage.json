@@ -1,0 +1,417 @@
+[
+  {
+    "test_id": "t_unit_session",
+    "files": [
+      "src/auth/session.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_otp",
+    "files": [
+      "src/auth/otp.py",
+      "src/auth/session.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_profile",
+    "files": [
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_eligibility",
+    "files": [
+      "src/benefits/eligibility.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_application",
+    "files": [
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_gateway",
+    "files": [
+      "src/payments/gateway.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_receipt",
+    "files": [
+      "src/payments/gateway.py",
+      "src/payments/receipt.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_upload",
+    "files": [
+      "src/documents/upload.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_sms",
+    "files": [
+      "src/notifications/sms.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_email",
+    "files": [
+      "src/notifications/email.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_search",
+    "files": [
+      "src/search/index.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": true
+  },
+  {
+    "test_id": "t_unit_slots",
+    "files": [
+      "src/appointments/slots.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_formatter",
+    "files": [
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_fallback",
+    "files": [
+      "src/i18n/fallback.py",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_config",
+    "files": [
+      "config/app.yaml"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_unit_schema",
+    "files": [
+      "schemas/citizen.sql",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_int_benefits_flow",
+    "files": [
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py",
+      "src/citizen/profile.py",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_int_payments",
+    "files": [
+      "src/benefits/application.py",
+      "src/payments/gateway.py",
+      "src/payments/receipt.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_int_notify",
+    "files": [
+      "src/i18n/formatter.py",
+      "src/notifications/email.py",
+      "src/notifications/sms.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_int_appointments",
+    "files": [
+      "src/appointments/slots.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_sec_auth",
+    "files": [
+      "src/auth/otp.py",
+      "src/auth/session.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_smoke_portal",
+    "files": [
+      "src/auth/session.py",
+      "src/benefits/application.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_a11y_home",
+    "files": [
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": true
+  },
+  {
+    "test_id": "t_locale_en_common",
+    "files": [
+      "locales/en/common.json",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_en_benefits",
+    "files": [
+      "locales/en/benefits.json",
+      "src/benefits/application.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_benefits_en",
+    "files": [
+      "locales/en/benefits.json",
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_appointments_en",
+    "files": [
+      "locales/en/appointments.json",
+      "src/appointments/slots.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_hi_common",
+    "files": [
+      "locales/hi/common.json",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_hi_benefits",
+    "files": [
+      "locales/hi/benefits.json",
+      "src/benefits/application.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_benefits_hi",
+    "files": [
+      "locales/hi/benefits.json",
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_appointments_hi",
+    "files": [
+      "locales/hi/appointments.json",
+      "src/appointments/slots.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_ta_common",
+    "files": [
+      "locales/ta/common.json",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_ta_benefits",
+    "files": [
+      "locales/ta/benefits.json",
+      "src/benefits/application.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_benefits_ta",
+    "files": [
+      "locales/ta/benefits.json",
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_appointments_ta",
+    "files": [
+      "locales/ta/appointments.json",
+      "src/appointments/slots.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_te_common",
+    "files": [
+      "locales/te/common.json",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_te_benefits",
+    "files": [
+      "locales/te/benefits.json",
+      "src/benefits/application.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_benefits_te",
+    "files": [
+      "locales/te/benefits.json",
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_appointments_te",
+    "files": [
+      "locales/te/appointments.json",
+      "src/appointments/slots.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_bn_common",
+    "files": [
+      "locales/bn/common.json",
+      "src/i18n/formatter.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_locale_bn_benefits",
+    "files": [
+      "locales/bn/benefits.json",
+      "src/benefits/application.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_benefits_bn",
+    "files": [
+      "locales/bn/benefits.json",
+      "src/benefits/application.py",
+      "src/benefits/eligibility.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_e2e_appointments_bn",
+    "files": [
+      "locales/bn/appointments.json",
+      "src/appointments/slots.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_partner_nid_hook",
+    "files": [
+      "src/auth/session.py",
+      "src/citizen/profile.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_nid_internal",
+    "files": [
+      "src/auth/session.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  },
+  {
+    "test_id": "t_karnataka_scheme",
+    "files": [
+      "src/benefits/eligibility.py"
+    ],
+    "captured_at": "2026-09-06T12:00:00+00:00",
+    "stale": false
+  }
+]

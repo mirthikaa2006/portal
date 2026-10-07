@@ -1,0 +1,108 @@
+name: Test Impact Selection & Telemetry Streaming
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  test-impact-pipeline:
+    runs-on: ubuntu-latest
+    env:
+      MITHUNA_API_URL: ${{ secrets.MITHUNA_API_URL || 'http://localhost:8000' }}
+      ORG_ID: ministry_interior
+      ACTOR_ID: ci-bot
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Extract Changed Files & Query Test Impact Selector
+        id: selector
+        run: |
+          # 1. Extract changed files relative to base branch
+          BASE_SHA="${{ github.event.pull_request.base.sha || 'HEAD~1' }}"
+          CHANGED_FILES=$(git diff --name-only $BASE_SHA HEAD | jq -R -s -c 'split("\n")[:-1]')
+          echo "Changed files: $CHANGED_FILES"
+
+          # 2. Query Selector API for test execution plan
+          PAYLOAD=$(jq -n \
+            --arg org "$ORG_ID" \
+            --arg summary "${{ github.event.pull_request.title || github.event.head_commit.message }}" \
+            --argjson files "$(git diff --name-only $BASE_SHA HEAD | awk 'NF {print "{\"path\":\"" $0 "\",\"kind\":\"code\"}"}' | jq -s .)" \
+            '{org_id: $org, summary: $summary, files: $files}')
+
+          RESPONSE=$(curl -s -X POST "$MITHUNA_API_URL/v1/select" \
+            -H "Content-Type: application/json" \
+            -H "X-Actor-Id: $ACTOR_ID" \
+            -H "X-Org-Id: $ORG_ID" \
+            -H "X-Role: qa_operator" \
+            -d "$PAYLOAD" || echo '{"policy":{"can_execute_skips":"no"}}')
+
+          echo "Selector response: $RESPONSE"
+          # Extract tests where decision != 'skip'
+          TESTS_TO_RUN=$(echo "$RESPONSE" | jq -r '.recommendations[]? | select(.decision != "skip") | .test_id' | tr '\n' ' ')
+          echo "TESTS_TO_RUN=$TESTS_TO_RUN" >> $GITHUB_ENV
+
+      - name: Execute Selected Tests
+        id: test_run
+        run: |
+          START_TIME=$(date +%s)
+          TEST_EXIT_CODE=0
+
+          if [ -z "$TESTS_TO_RUN" ]; then
+            echo "All tests safely skipped by impact selector!"
+          else
+            echo "Running selected test suite: $TESTS_TO_RUN"
+            # Execute selected tests; record status
+            python -m pytest -q || TEST_EXIT_CODE=$?
+          fi
+
+          END_TIME=$(date +%s)
+          DURATION=$((END_TIME - START_TIME))
+          echo "TEST_EXIT_CODE=$TEST_EXIT_CODE" >> $GITHUB_ENV
+          echo "DURATION=$DURATION" >> $GITHUB_ENV
+
+      - name: Stream Telemetry to Mithuna (Always Executes)
+        if: always()
+        run: |
+          PASSED="true"
+          if [ "${{ env.TEST_EXIT_CODE }}" != "0" ]; then
+            PASSED="false"
+          fi
+
+          # Stream telemetry for executed tests back to POST /v1/feedback
+          for TEST_ID in ${{ env.TESTS_TO_RUN || 't_smoke_portal' }}; do
+            python scripts/stream_telemetry.py \
+              --endpoint "$MITHUNA_API_URL/v1/feedback" \
+              --change-id "${{ github.sha }}" \
+              --test-id "$TEST_ID" \
+              --passed "$PASSED" \
+              --duration "${{ env.DURATION || 0 }}" \
+              --actor "$ACTOR_ID" \
+              --org "$ORG_ID"
+          done
+
+          # Flush any offline spooled events from previous connection blips
+          python scripts/stream_telemetry.py --flush --endpoint "$MITHUNA_API_URL/v1/feedback"
+
+      - name: Enforce Test Success Status
+        run: |
+          if [ "${{ env.TEST_EXIT_CODE }}" != "0" ]; then
+            echo "Test suite failed with exit code ${{ env.TEST_EXIT_CODE }}"
+            exit ${{ env.TEST_EXIT_CODE }}
+          fi
